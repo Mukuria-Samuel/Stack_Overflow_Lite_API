@@ -3,9 +3,12 @@ function validate(form) {
   {
     window.open('admin.html')
   }
-  else
+  else if (form.username.value == "user1" && form.password.value == "user")
   {
-    window.open('index.html')
+    window.open('home.html')
+  }
+  else{
+    window.alert('Username or password incorrect')
   }
 }
 
