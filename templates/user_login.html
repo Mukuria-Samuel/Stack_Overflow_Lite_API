@@ -4,19 +4,18 @@
 	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 	<title>Elite Store Manager</title>
 	<link rel="stylesheet" type="text/css" href="../static/login.css">
+	<script src="..\static\searchbar.js"></script>
 </head>
-<body>
+<body>	
 	<div class="login-form">
-		<h1>Elite Store Manager Login </h1>
+		<h1>Elite Store Manager Login </h1>	
 		<form>
 			<p>Username:</p>
 			<input type="text" name="username" placeholder="Enter your store username" required="username" autofocus="username">
 			<p>Password :</p>
 			<input type="password" name="password" placeholder="Enter your password" required="password">
-			<button><a href="index.html">Login</a></button>
-		</form>
-		
+			<button onclick="validate(this.form)"><a>Login</a></button>
+		</form>	
 	</div>
-
 </body>
 </html>
