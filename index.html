@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="Author" content="SAMVILLE DATA SERVICES">
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elite | Store Manager</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="searchbar.js"></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="logo">
+				<h1><span class="logo">ELITE | </span>Store Manager</h1>
+			</div>
+			<nav>
+				<ul>
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#mysales">Sales</a></li>
+					<li><a href="#current">Inventory</a></li>
+					<li><a href="user_login.html">Sign Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="search">
+		<div class="container">
+			<label><h3>10th Oct. 2018 | 6:25pm </h3></label>
+			<input type="text" class="products" id="products" onkeyup="myFunction()" placeholder="Search products..">
+		</div>
+	</section>
+
+	<section class="items">
+		<div class="container">
+			<div class="category">
+				<h3> Our Catalog:</h3>
+				<select name="catalog" onchange="linkttocategory(this.options(this.selectedIndex).value)">
+					<option value="#laptop">Laptop</a></option>
+					<option value="Phone">Phones</a></option>
+					<option value="Solar">Solar</option>
+					<option value="#Tv">TV</option>
+					<option value="#Hometheater">Hometheater</option>
+				</select>
+				<hr class="hr">
+				<table>
+					<a name="mysales"></a>
+					<tr>
+						<th>
+							<p id="no_bg">Staff Name: Jame K.</p>
+							<p id="no_bg">Staff ID: 0001k</p>
+							<hr>
+							<p id="no_bg1">Sales: KSHs: 6,250</p><hr>
+							<div id="cart">
+								<h4>Items in Cart</h4><hr>
+								<ol>
+									<li class="cart">K-lite solar 18,849 (1)</li>
+									<li class="cart">Solar bulbs 300 (5)</li>
+									<li class="cart">Sony Tv 24,000 (1)</li>
+									<li class="cart">Hd Camera 7,000 (1)</li>
+								</ol><hr>
+								<label class="cart_t">Total : Kshs.51,849</label><hr>
+								<button>Checkout</button>
+							</div>
+							<div id="stock_div">
+								
+							</div>
+						</th>
+					</tr>
+					<tr><img src="..\img\user2.jpg" alt="user image"></tr>
+				</table>
+
+			</div>
+			<ul class="products_list" id="products_list">
+				<li>
+					<div class="product_box">
+						<img src="Ouktel.jpg" alt="phone image">
+						<h3 id="Phone">Cat: Phones</h3>
+						<p><b><a href="#current">Ouktel C9:</b>4gb(dual sim) 3G/4G, 5.0” available in red,black and white<span><b><br><label class="cart_t">KSH.4,599</label></span></b></p><button>Add to Cart</button> </a>
+					</div>
+				</li>
+				<li id="Solar">
+					<div class="product_box">
+						<img src="solar4.jpg" alt="laptop image">
+						<h3>Cat: Solar</h3>
+						<p><b><a href="#current">K-Lite solar:</b>40Watt, 12v, solar battery, bulbs available in yellow and black<span><b><br><label class="cart_t">KSH.9,599</label></span></b></p><button>Add to Cart</button></a>
+					</div>
+				</li>
+				<li id="Laptop">
+					<div class="product_box">
+						<img src="lap3.jpg" alt="phone image">
+						<h3>Cat: Laptop</h3>
+						<p><b><a href="#current">Lenovo Yoga:</b> 8gbRam, 1TB HDD, 15.0”, core i7 processor, available in red,black<span><b><br><label class="cart_t">KSH.46,599</label></span></b></p><button>Add to Cart</button></a>
+					</div>
+				</li>
+				<li>
+					<div class="product_box">
+						<img src="Ouktel.jpg" alt="phone image">
+						<h3>Cat: Phones</h3>
+						<p><b><a href="#current">Ouktel C11:</b> 8gb(dual sim) 3G/4G, 5.0” available in red,black and white<span><b><br><label class="cart_t">KSH.7,599</label></span></b></p><button>Add to Cart</button></a>
+					</div>
+				</li>
+				<li>
+					<div class="product_box">
+						<img src="lap4.jpg" alt="phone image">
+						<h3>Cat: Laptop</h3>
+						<p><b><a href="#current">Samsung :</b> 8gbRam, 1TB HDD, 15.0”, core i7, available in red,black<span><b><br><label class="cart_t">KSH.34,599</label></span></b></p><button>Add to Cart</button></a>
+					</div>
+				</li>
+				<li>
+					<div class="product_box">
+						<img src="lap2.jpg" alt="phone image">
+						<h3>Cat: Laptop</h3>
+						<p><b><a href="#current">Asus X:</b> 8gbRam, 2TB HDD, 15.0”,core i5, available in black<span><b><br><label class="cart_t">KSH.48,599</label></span></b></p><button>Add to Cart</button></a>
+					</div>
+				</li>
+				<li>
+					<div class="product_box">
+						<img src="solar.jpg" alt="laptop image">
+						<h3>Cat: Solar</h3>
+						<p><b><a href="#current">chloride:</b> 80Watt, 18v panel with warranty, available in black and white<span><b><br><label class="cart_t">KSH.18,000</label></span></b></p><button>Add to Cart</button></a>
+					</div>
+				</li>
+				<li>
+					<div class="product_box">
+						<img src="infinix.jpg" alt="phone image">
+						<h3>Cat: Phones</h3>
+						<p><b><a href="#current">Infinix H:</b> 2gbRam, 8GB, 5.0”,(dual sim) 4G, available in red,black<span><b><br><label class="cart_t">KSH.14,599</label></span></b></p><button>Add to Cart</button></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<hr>
+	<table class="table_style" id="products_list">
+		<caption>Product Inventory</caption>
+		<a name="inventory"></a>
+		<tr>
+			<th>Code</th>
+			<th>Product</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th>Description</th>
+			<th>Min-Stock</th>
+			<th>Stock Avl.</th>
+		</tr>
+		<a href="#"><tr>
+			<td>P1001</td>
+			<td>Xtigi</td>
+			<td>15,000.0</td>
+			<td>Phone</td>
+			<td>2gbRam, 8GB, 5.0”,(dual sim) 4G, available in white,black</td>
+			<td>10</td>
+			<td>28</td>
+		</tr></a>
+		<a href="#"><tr>
+			<td>L1005</td>
+			<td>Asus</td>
+			<td>45,000.0</td>
+			<td>Laptop</td>
+			<td>4gbRam, 1TBHDD, 15.0” screen, corei5, Nvidia graphics, color black</td>
+			<td>5</td>
+			<td>18</td>
+		</tr></a>
+		<a href="#"><tr>
+			<td>B100</td>
+			<td>Solar Bulb</td>
+			<td>300.0</td>
+			<td>Solar</td>
+			<td>LED 2amps DC bulbs with 4oohrs, energy saver up to 60%</td>
+			<td>50</td>
+			<td>250</td>
+		</tr></a>
+		<tr>
+			<td>S1002</td>
+			<td>Klite</td>
+			<td>21,000.0</td>
+			<td>Solar</td>
+			<td>12v, 24Watt solar pannel, charge controller, comes with battery storage</td>
+			<td>5</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>S1003</td>
+			<td>LG</td>
+			<td>24,000.0</td>
+			<td>Audio</td>
+			<td>5.1 speaker system, 4000Watt subwoofer, 800Watt midrange spk, black</td>
+			<td>10</td>
+			<td>15</td>
+		</tr>
+		<tr>
+			<td>S1004</td>
+			<td>Sony</td>
+			<td>43,000.0</td>
+			<td>Video</td>
+			<td>smart HD Tv, 40", built in DBT2 decorder, USB,HDMI,VGA connections</td>
+			<td>10</td>
+			<td>25</td>
+		</tr>
+	</table>
+	<hr>
+	<footer>
+		<p id="footer_p"><b>User | Homepage | SDS Copyright &copy; 2018</b></p>
+	</footer>
+	<hr>
+</body>
+</html>
