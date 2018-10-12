@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="Author" content="SAMVILLE DATA SERVICES">
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elite | Store Manager</title>
+	<link rel="stylesheet" type="text/css" href="..\static\index.css">
+	<script src="..\static\searchbar.js"></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div id="logo">
+				<h1><span class="logo">ELITE | </span>Store Manager</h1>
+			</div>
+			<nav>
+				<ul>
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#inventory">Inventory</a></li>
+					<li><a href="user_login.html">Sign Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<hr>
+	<button onclick="sortTable(2)" class="sortbtn" autofocus="sortbtn">Sort by Sales</button>
+	<table class="table_style" id="staffRecord">
+		<caption>Staff Sales Record</caption>
+		<tr>
+			<th>Staff ID</th>
+			<th>Staff Name</th>
+			<th onclick="sortTable(2)">Sales (Kshs.)</th>
+			<th>Rate</th>
+		</tr>
+		<tr>
+			<td>001</td>
+			<td>Monica Rose</td>
+			<td>7800</td>
+			<td>colored label</td>
+		</tr>
+		<tr>
+			<td>002</td>
+			<td>James K</td>
+			<td>4400</td>
+			<td>colored label</td>
+		</tr>
+			<td>004</td>
+			<td>Nzau Mwema</td>
+			<td>9000</td>
+			<td>colored label</td>
+		<tr>
+			<td>003</td>
+			<td>Korir Abraham</td>
+			<td>6200</td>
+			<td>colored label</td>
+		</tr>
+	</table>
+	<div class="admin_rights">
+		<form id="staff" >
+			<label> StaffName </label>
+			<input type="text" name="staffName" placeholder="Enter staffName" required="staffName">
+			<label> Password </label>
+			<input type="password" name="password" placeholder="Enter default password" required="password">
+			<button class="admin_btn">Add Staff</button><button class="admin_btn">Edit Staff</button><button class="admin_btn">Delete Staff</button>
+		</form>			
+	</div>
+	<hr>
+	<hr>
+	<section id="search">
+		<div class="container">
+			<input type="text" class="products" id="products" onkeyup="searchFunction()" placeholder="Search products..">
+		</div>
+	</section>
+	<table class="table_style" id="products_list">
+		<caption>Product Inventory</caption>
+		<a name="inventory"></a>
+		<tr>
+			<th>Code</th>
+			<th>Product</th>
+			<th>Price</th>
+			<th>Category</th>
+			<th>Description</th>
+			<th>Min-Stock</th>
+			<th>Stock Avl.</th>
+		</tr>
+		<a href="#"><tr>
+			<td>P1001</td>
+			<td>Xtigi</td>
+			<td>15,000.0</td>
+			<td>Phone</td>
+			<td>2gbRam, 8GB, 5.0”,(dual sim) 4G, available in white,black</td>
+			<td>10</td>
+			<td>28</td>
+		</tr></a>
+		<a href="#"><tr>
+			<td>L1005</td>
+			<td>Asus</td>
+			<td>45,000.0</td>
+			<td>Laptop</td>
+			<td>4gbRam, 1TBHDD, 15.0” screen, corei5, Nvidia graphics, color black</td>
+			<td>5</td>
+			<td>18</td>
+		</tr></a>
+		<a href="#"><tr>
+			<td>B100</td>
+			<td>Solar Bulb</td>
+			<td>300.0</td>
+			<td>Solar</td>
+			<td>LED 2amps DC bulbs with 4oohrs, energy saver up to 60%</td>
+			<td>50</td>
+			<td>250</td>
+		</tr></a>
+		<tr>
+			<td>S1002</td>
+			<td>Klite</td>
+			<td>21,000.0</td>
+			<td>Solar</td>
+			<td>12v, 24Watt solar pannel, charge controller, comes with battery storage</td>
+			<td>5</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>S1003</td>
+			<td>LG</td>
+			<td>24,000.0</td>
+			<td>Audio</td>
+			<td>5.1 speaker system, 4000Watt subwoofer, 800Watt midrange spk, black</td>
+			<td>10</td>
+			<td>15</td>
+		</tr>
+		<tr>
+			<td>S1004</td>
+			<td>Sony</td>
+			<td>43,000.0</td>
+			<td>Video</td>
+			<td>smart HD Tv, 40", built in DBT2 decorder, USB,HDMI,VGA connections</td>
+			<td>10</td>
+			<td>25</td>
+		</tr>
+	</table>
+	<div>
+		<table>
+			<tr>
+			</tr>
+			<tr>
+				<td><label>Code</label></td>
+				<td><input type="text" name="code" required="code" placeholder="B100"></td>
+			</tr>
+		
+			<tr>
+				<td><label> price </label></td>
+				<td><input type="text" name="price" required="price" placeholder="4000"></td>
+			</tr>
+		
+			<tr>
+				<td><label> Category </label></td>
+				<td><input type="text" name="category" required="category" placeholder="video"></td>
+			</tr>
+
+			<tr>
+				<td><label> Description </label></td>
+				<td><input type="text" name="Description" required="Description" placeholder="5.1 speaker system, 40Watt"></td>
+			</tr>
+
+			<tr>
+				<td><label> Min stock </label></td>
+				<td><input type="text" name="minstock" required="minstock" placeholder="5"></td>
+			</tr>
+			<tr>
+				<button class="admin_btn">Delete Product</button><button class="admin_btn">Edit Product</button>
+				<button class="admin_btn">Add Products</button>
+			</tr>
+		</table>				
+		
+	</div>
+	
+	<hr>
+	<footer>
+		<p id="footer_p"><b>Admin | Homepage | SDS Copyright &copy; 2018</b></p>
+	</footer>
+	<hr>
+</body>
+</html>
