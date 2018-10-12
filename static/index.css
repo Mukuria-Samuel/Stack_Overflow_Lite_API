@@ -39,7 +39,7 @@ body {
 	font-family: Calibri;
 }
 
-button{
+.product_box button{
 	background-color: gold;
 	border-radius: 2px;
 	font-weight: bold;
@@ -102,12 +102,12 @@ header a:hover{
 }
 
 header .logo, header .active a {
-	color: red;
+	color: #e3491d;
 
 }
 
 .search{
-	background-color: indigo;
+	background-color: #dddddd;
 	border: 1px solid white;
 	width: 100%;
 	padding: 10px, 5px, 10px, 5px;
@@ -125,7 +125,7 @@ header .logo, header .active a {
 
 }
 .search label{
-	color: white;
+	color: #e3491d;
 	float: left;
 	padding-left: 10px;
 
@@ -137,8 +137,8 @@ header .logo, header .active a {
 }
 
 .items .product_box img{
-	width: 100px;
-	height: 140px;
+	width: 95px;
+	height: 130px;
 }
 .product_box h3{
 	background-color: orange;
@@ -163,7 +163,7 @@ header .logo, header .active a {
 	background-color: #f4f4f4;
 	color: #35424a;
 	padding: 2px;
-	width: 18%;
+	width: 19%;
 	border: 1px solid grey;
 	border-radius: 4px;
 	margin: 2px;
@@ -270,4 +270,95 @@ footer{
 	color: white;
 	padding: 10px;
 	margin-top: 15px;
+}
+
+/*style for tables on admin page*/
+
+#search input[type="text"]{
+	padding:10px;
+	border-radius: 7px;
+	border: 2px solid #dddddd;
+	float: right;
+	color: black;
+	margin: 7px;
+	font-size: 18px;
+	min-height: 20px;
+	width: 40%
+
+}
+
+caption{
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+.table_style{
+	width: 97%;
+	margin:20px;
+	border-collapse: collapse;
+	font-family: Calibri;
+}
+.table_style td, th{
+	border: 1px solid black;
+	padding: 7px;
+	text-align: left;
+}
+.table_style tr:nth-child(even){
+	background-color: #dddddd;
+}
+.table_style tr, td{
+	white-space: nowrap;
+}
+.table_style th{
+	background-color: #e3491d;
+	color: white;
+	font-size: 18px;
+}
+/*admin staff form*/
+.admin_rights form{
+	display: inline-flex;
+	border-bottom:1px solid #e3491d;
+	padding: 10px;
+	margin: 6px;
+	margin-bottom: 25px;
+	width: 96%;
+	float: right;
+	background-color: #dddddd;
+}
+
+label{
+	margin: 4px;
+	font-weight: bold;
+	color:#e3491d;
+	font-family: Lucida Console;
+	font-size: 16px;
+}
+
+
+.admin_btn{
+	height: 33px;
+	width: 17%;
+	margin: 4px;
+	font-family: Lucida Console;
+	color:#e3491d;
+	font-weight: bold;
+}
+.admin_rights input[type=text], input[type=password]{
+	height: 27px;
+	width: 20%;
+	margin: 3px;
+
+}
+.sortbtn{
+	height: 33px;
+	width: 12%;
+	margin: 4px;
+	float: right;
+	display: inline-flex;
+	background-color:#e3491d;
+	font-size: 15px;
+	font-weight: bold;
+	color: white;
+	margin-right: 20px;
+	margin-top: 20px; 
 }

@@ -1,3 +1,15 @@
+function validate(form) {
+  if(form.username.value == "admin1" && form.password.value == "admin")
+  {
+    window.open('admin.html')
+  }
+  else
+  {
+    window.open('index.html')
+  }
+}
+
+
 // NB:when the function is called, getting the list id has to come first before the list item //
 function myFunction() {
     var product, convert, li, ul, a, item;
@@ -16,4 +28,29 @@ function myFunction() {
             li[item].style.display = "none";
         }
     }
+}
+
+//table sort function..//
+function sortTable(n) {
+  var table, rows, d, x, y, rearrange, arrange;
+  table = document.getElementById("staffRecord");
+  rearrange = true;
+  while (rearrange) {
+    rearrange = false;
+    rows = table.rows;
+    
+    for (d = 1; d < (rows.length - 1); d++) {
+      arrange = false;
+      x = rows[d].getElementsByTagName("td")[n];
+      y = rows[d + 1].getElementsByTagName("td")[n];
+      if (Number(x.innerHTML) > Number(y.innerHTML)) {
+        arrange = true;
+        break;
+      }
+    }
+    if (arrange) {
+      rows[d].parentNode.insertBefore(rows[d + 1], rows[d]);
+      rearrange = true;
+    }
+  }
 }
