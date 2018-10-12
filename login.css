@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background:#03061734;
-	background-image:url(../img/bg.jpg);
+	background-image:url(bg.jpg);
 }
 .login-form{
 	height: 370px;
