@@ -1,4 +1,4 @@
-from flask_restful import Resource
+from flask_restful import Resource, reqparse
 from flask import Flask, jsonify, request
 from flask_jwt import jwt_required
 
@@ -21,9 +21,50 @@ class ProductResource(Resource):
 		return {"message":'Product : {} added successfully'.format(prod_name)}, 201
 
 	def get(self):
-		return {"message":all_products}, 200
+		return {"Products Available":all_products}, 200
+
+class ProductDeletebyName(Resource):
+	def delete(self, prod_name):
+		global all_products
+		all_products = [product for product in all_products if product["prod_name"] != prod_name]
+		return "{} is deleted.".format(prod_name), 200		
 
 class ProductById(Resource):
+	def put(self, _id):
+		data = request.get_json()
+		#_id = len(all_products)+1
+		prod_name = data['prod_name']
+		parser = reqparse.RequestParser()
+		parser.add_argument("prod_name")
+		parser.add_argument("price")
+		parser.add_argument("category")
+		parser.add_argument("description")
+		parser.add_argument("stock")
+		parser.add_argument("min_stock")
+		args = parser.parse_args()
+
+		for product in all_products:
+			if(_id == product["_id"]):
+				product['prod_name'] = args['prod_name']
+				product["price"] = args["price"]
+				product["category"] = args["category"]
+				product["description"] = args["description"]
+				product["stock"] = args["stock"]
+				product["min_stock"] = args["min_stock"]
+				return product, 200
+		product = {
+			"_id":_id,
+			"prod_name": prod_name,
+			"price": args["price"],
+			"category": args["category"],
+			"description": args["description"],
+			"stock": args["stock"],
+			"min_stock": args["min_stock"]
+		}
+		all_products.append(product)
+		return product, 201
+		return {"message":'Product : {} updated'.format(prod_name)}, 201
+
 	def get(self, _id):
 		for product in all_products:
 			if product['_id'] == _id:
@@ -51,3 +92,8 @@ class SaleById(Resource):
 			if sale["sale_id"] == sale_id:
 				return sale
 		return {'Sale': None}, 404
+
+	def delete(self, sale_id):
+		global all_sales
+		all_sales = [sale for sale in all_sales if sale["sale_id"] != sale_id]
+		return "sale ID :{} has been deleted.".format(sale_id), 200		
