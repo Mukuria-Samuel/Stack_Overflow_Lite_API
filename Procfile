@@ -1,1 +1,1 @@
-web: gunicorn apiv1:manage 
+web: gunicorn manage:app 
