@@ -43,7 +43,7 @@ def get_all_sales():
 	claims=get_jwt_claims()
 	admin="admin"
 	if claims["role"]!= admin:
-		return jsonify({"message":"Only an admin can view all sales records"}),401
+		return jsonify({"message":"Admin login required to view sales!"}),401
 	response= jsonify(sale_object.get_all_sales())
 	response.status_code=200
 	return response
