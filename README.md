@@ -1,10 +1,13 @@
-[![Build Status](https://travis-ci.org/Mukuria-Samuel/Store_Manager_app.svg?branch=Challenge-2)](https://travis-ci.org/Mukuria-Samuel/Store_Manager_app)
+https://travis-ci.org/Mukuria-Samuel/Store_Manager_app.svg?branch=ch_app_on_heroku
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
+
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage)](https://codeclimate.com/github/codeclimate/codeclimate/test_coverage)
 
 **Creator**: s mukuria
 
-#Store Manager is a web application that helps store owners manage sales and product inventory records.
+#Store Manager
+Store manager app is a web application that helps store owners manage sales and product inventory records.
 
 Endpoints:
    	http://127.0.0.1:5000/api/v1/auth/register 		|	register a user
