@@ -4,7 +4,7 @@ sales_dbs={}
 
 class Sale():
 		
-	def create_sale(self,sale_id, product, price,quantity,total_amnt,attendant, date):
+	def put(self,sale_id, product, price,quantity,total_amnt,attendant, date):
 		self.sale_detail={}
 		self.sale_detail["sale_id"]=sale_id
 		self.sale_detail["product"]=product
