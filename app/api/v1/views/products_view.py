@@ -34,7 +34,7 @@ def post_product():
     claims=get_jwt_claims()
     admin="admin"
     if claims['role'] != admin:
-        return jsonify({"message":"Only an admin is permitted to post products"}),401
+        return jsonify({"message":"Admin login required"}),401
     response=jsonify(product_object.put(prod_id, prod_name, category, price,stock,min_stock,description))
 
     response.status_code = 201
