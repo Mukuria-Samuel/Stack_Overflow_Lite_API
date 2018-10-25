@@ -6,7 +6,8 @@ https://travis-ci.org/Mukuria-Samuel/Store_Manager_app.svg?branch=ch_app_on_hero
 
 **Creator**: s mukuria
 
-#Store Manager
+
+#Store Manager#
 Store manager app is a web application that helps store owners manage sales and product inventory records.
 
 Endpoints:
