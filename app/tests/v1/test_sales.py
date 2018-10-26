@@ -102,7 +102,7 @@ class TestSales(BaseTestCase):
                     username="adminman",
                     password="summertime1")),content_type='application/json')
             res_admin=json.loads(response_admin.data)
-            admin_token=res_admin["token"]
+            token_=res_admin["token"]
             
             self.client.post('/api/v1/sales',headers=dict(Authorization="Bearer " + user_token),
                 data=json.dumps(dict(
@@ -112,7 +112,7 @@ class TestSales(BaseTestCase):
                     quantity=1,
                     total_amnt=15000,
                     attendant='userman',)),content_type='application/json')
-            response=self.client.get('api/v1/sales',headers=dict(Authorization="Bearer " + admin_token))
+            response=self.client.get('api/v1/sales',headers=dict(Authorization="Bearer " + token_))
             self.assertEqual(response.status_code,201)
 
     def test_get_sale(self):
