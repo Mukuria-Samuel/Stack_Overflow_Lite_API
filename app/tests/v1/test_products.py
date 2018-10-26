@@ -7,9 +7,9 @@ class TestProducts(BaseTestCase):
 		with self.client:
 			self.client.post('/api/v1/auth/register',data=json.dumps(dict(username='adminman',password='summertime1',role='admin',confirm_password='summertime1')),
 				content_type='application/json')
-			login_response = self.client.post('/api/v1/auth/login',data=json.dumps(dict(username='adminman',password='summertime1')),content_type='application/json')
+			res_result = self.client.post('/api/v1/auth/login',data=json.dumps(dict(username='adminman',password='summertime1')),content_type='application/json')
 			
-			result=json.loads(login_response.data)
+			result=json.loads(res_result.data)
 			token=result["token"]
 			response = self.client.post('/api/v1/products',headers=dict(Authorization="Bearer " + token),
 				data=json.dumps(dict(
@@ -21,8 +21,8 @@ class TestProducts(BaseTestCase):
 					min_stock=5,
 					description='4G/dual simcard')),content_type='application/json')
 
-			response_data = json.loads(response.data)
-			self.assertEqual("inifinix : Added",response_data["message"])
+			result = json.loads(response.data)
+			self.assertEqual("inifinix : Added",result["message"])
 			self.assertEqual(response.status_code, 201)
 
 	def test_get_all_products(self):
@@ -33,10 +33,10 @@ class TestProducts(BaseTestCase):
 					role='attendant',
 					confirm_password='summertime2')),content_type='application/json')
 		
-			login_response = self.client.post('/api/v1/auth/login',data=json.dumps(dict(
+			res_result = self.client.post('/api/v1/auth/login',data=json.dumps(dict(
 					username='userman',
 					password='summertime2')),content_type='application/json')
-			result=json.loads(login_response.data)
+			result=json.loads(res_result.data)
 			token=result["token"]
 			response = self.client.get('/api/v1/products',headers=dict(Authorization="Bearer " + token))
 			self.assertEqual(response.status_code, 200)
@@ -48,10 +48,10 @@ class TestProducts(BaseTestCase):
 					role='admin',
 					confirm_password='summertime1'
 				)),content_type='application/json')
-		login_response = self.client.post('/api/v1/auth/login',data=json.dumps(dict(
+		res_result = self.client.post('/api/v1/auth/login',data=json.dumps(dict(
 					username='adminman',
 					password='summertime1')),content_type='application/json')
-		result=json.loads(login_response.data)
+		result=json.loads(res_result.data)
 		token=result["token"]
 		self.client.post('/api/v1/products',headers=dict(Authorization="Bearer " + token),
 				data=json.dumps(dict(

@@ -18,7 +18,6 @@ def register():
         return jsonify({"message": "Fields cannot be empty"}) 
     username = data.get('username').strip()
     password = data.get('password').strip()
-    #confirm_password = data.get('confirm_password').strip()
     role=data.get('role').strip()
 
     if username is None or not username:
@@ -27,8 +26,6 @@ def register():
         return jsonify({"message":"Role is required, specify"}),206
     if len(password) < 5:
         return jsonify({"message": "Password entered too short, min 5 characters"}),206
-    #if confirm_password != password:
-        #return jsonify({"message": "Password mismatch, please check"}) 
     response = jsonify(user_object.put(username,password,role))
     response.status_code = 201
     return response

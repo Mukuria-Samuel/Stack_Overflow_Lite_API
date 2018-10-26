@@ -3,6 +3,9 @@ import datetime
 sales_dbs={}
 
 class Sale():
+	def __init__(self):
+
+		self.sales_dbs = {}
 		
 	def put(self,sale_id, product, price,quantity,total_amnt,attendant, date):
 		self.sale_detail={}

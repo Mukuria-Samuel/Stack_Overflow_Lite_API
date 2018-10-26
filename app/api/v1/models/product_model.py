@@ -3,6 +3,11 @@ import os
 products_object={}
 
 class Product():
+	
+	def __init__(self):
+
+		self.products_object = {}
+		
 	def put(self,prod_id,prod_name,category,price,stock,min_stock,description):
 		
 		self.prod_detail={}
@@ -16,7 +21,7 @@ class Product():
 		self.prod_detail["min_stock"]=min_stock
 		self.prod_detail["description"]=description
 		products_object[prod_id]=self.prod_detail
-		return {"message":" {} : Added".format(prod_name)}
+		return {"message":"{} : Added".format(prod_name)}
 	def get_all_products(self):
 		return products_object
 
