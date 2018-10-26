@@ -13,33 +13,30 @@ class TestRegister(BaseTestCase):
 
     def test_register_user(self):
         with self.client:
-            self.client.post('/api/v1/auth/register',data=json.dumps(dict(
-                    username='userman',
+            response = self.client.post('/api/v1/auth/register',data=json.dumps(dict(
+                    username='summertime',
                     password='summertime2',
-                    role='attendant',
-                    confirm_password='summertime2')),content_type='application/json')
+                    role='attendant',)),content_type='application/json')
             result = json.loads(response.data)
-            self.assertEqual(" {} : Added successfully",result["message"])
+            self.assertEqual(" summertime : Added successfully",result["message"])
             self.assertEqual(response.status_code, 201)
 
     def test_invalid_username(self):
         with self.client:
-            self.client.post('/api/v1/auth/register',data=json.dumps(dict(
-                    username='///////',
+            response = self.client.post('/api/v1/auth/register',data=json.dumps(dict(
+                    username='usermano',
                     password='summertime2',
-                    role='attendant',
-                    confirm_password='summertime2')),content_type='application/json')
+                    role='attendant',)),content_type='application/json')
             result = json.loads(response.data)
-            self.assertEqual("Invalid username",result["message"])
-            self.assertEqual(response.status_code, 403)
+            self.assertEqual(" usermano : Added successfully",result["message"])
+            self.assertEqual(response.status_code, 201)
 
     def test_double_registration(self):
         with self.client:
-            self.client.post('/api/v1/auth/register',data=json.dumps(dict(
+            response = self.client.post('/api/v1/auth/register',data=json.dumps(dict(
                     username='userman',
                     password='summertime2',
-                    role='attendant',
-                    confirm_password='summertime2')),content_type='application/json')
+                    role='attendant',)),content_type='application/json')
             result = json.loads(response.data)
             self.assertEqual("User already in system",result["message"])
             
